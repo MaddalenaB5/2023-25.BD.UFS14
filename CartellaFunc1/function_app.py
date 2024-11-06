@@ -3,10 +3,6 @@ import datetime
 import json
 import logging
 
-import re
-from pypdf import PdfReader
-from io import BytesIO
-
 app = func.FunctionApp()
 
 
