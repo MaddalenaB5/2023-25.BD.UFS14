@@ -3,6 +3,10 @@ import datetime
 import json
 import logging
 
+import re
+from pypdf import PdfReader
+from io import BytesIO
+
 app = func.FunctionApp()
 
 
@@ -20,6 +24,8 @@ def HttpExample(req: func.HttpRequest) -> func.HttpResponse:
         else:
             name = req_body.get('name')
 
+
+
     '''if name:
         return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
     else:
@@ -33,8 +39,10 @@ def HttpExample(req: func.HttpRequest) -> func.HttpResponse:
             return func.HttpResponse(f"URL valido")
         else:
              return func.HttpResponse('URL non valido')
-    
-    
-    
+
+     
+
 def controllo_validita_url(url):
-    return url.startswith('http://') or url.startswith('https://')
+    return url.startswith('http://') or url.startswith('https://') 
+
+
